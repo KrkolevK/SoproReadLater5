@@ -1,0 +1,43 @@
+﻿@model System.Collections.Generic.List<Services.Models.Data.BookmarkData>
+
+@{
+    ViewBag.Title = "Bookmarks";
+    Layout = "_Layout";
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model[0].CategoryName)
+            @Html.DisplayNameFor(model => model[0].ShortDescription)
+            @Html.DisplayNameFor(model => model[0].URL)
+
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName) |
+
+                @Html.DisplayFor(modelItem => item.ShortDescription) |
+                @Html.DisplayFor(modelItem => item.URL)
+
+
+            </td>
+            <td>
+
+                @Html.ActionLink("Edit", "Edit", "Bookmark",new {bookmarkId = item.Id}) |
+                @Html.ActionLink("Details", "Details", "Bookmark",new {bookmarkId = item.Id}) |
+                @Html.ActionLink("Remove", "Delete","Bookmark", new { bookmarkId = item.Id})
+            </td>
+        </tr>
+    }
+
+</table>
