@@ -119,8 +119,6 @@ namespace ReadLater5.Controllers
         /// Returns the create view.
         /// </summary>
         /// <returns></returns>
-        //[ActionName("Create")]
-        //[Route("Create")]
         public IActionResult Create()
         {
             return View();
@@ -448,7 +446,7 @@ namespace ReadLater5.Controllers
             catch (Exception e)
             {
                 _logger.LogError($"{nameof(CreateNewBookmark)} failed with error msg - {e.Message}");
-                return false;
+                return null;
             }
 
         }

@@ -113,17 +113,11 @@ namespace Services
 
                 if (bookmark != null)
                 {
-                    var entity = new Bookmark
-                    {
-                        ID = bookmark.ID,
-                        ShortDescription = args.ShortDescription,
-                        URL = args.URL,
-                        CategoryId = args.CategoryId,
-                        UserId = userId,
-                        CreateDate = bookmark.CreateDate
-                    };
+                    bookmark.URL = args.URL;
+                    bookmark.CategoryId = args.CategoryId;
+                    bookmark.ShortDescription = args.ShortDescription;
 
-                    _readLaterDataContext.Update(entity);
+                    _readLaterDataContext.Update(bookmark);
                     await _readLaterDataContext.SaveChangesAsync();
                 }
             }

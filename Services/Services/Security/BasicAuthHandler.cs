@@ -16,11 +16,9 @@ namespace Services.Security
     public class BasicAuthHandler : AuthenticationHandler<AuthenticationSchemeOptions>
     {
         private readonly ILoginManager _loginManager;
-        private readonly IHttpContextAccessor _httpContext;
-        public BasicAuthHandler(IOptionsMonitor<AuthenticationSchemeOptions> options, ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock, ILoginManager loginManager, IHttpContextAccessor httpContext) : base(options, logger, encoder, clock)
+        public BasicAuthHandler(IOptionsMonitor<AuthenticationSchemeOptions> options, ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock, ILoginManager loginManager) : base(options, logger, encoder, clock)
         {
             _loginManager = loginManager;
-            _httpContext = httpContext;
         }
 
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()

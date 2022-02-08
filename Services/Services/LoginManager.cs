@@ -106,7 +106,7 @@ namespace Services
                     return null;
                 }
 
-                //TODO:: NEED TO CHECK PASSWORD HASHED IS SAME WITH INPUT PASSWORD, we assume its the same
+                //TODO:: NEED TO CHECK IF PASSWORD HASHED IS SAME WITH INPUT PASSWORD, we assume its the same
 
                 var claimCollection = new List<Claim>();
 
